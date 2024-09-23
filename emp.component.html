@@ -1,0 +1,19 @@
+<p>emp works!</p>
+<br>
+
+    <table border="1" align="center">
+        <tr>
+            <th>Employee No</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+        </tr>
+
+        <!-- Here taking loop -->
+ 
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.eno}}</td>
+            <td>{{emp.ename}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+
+</table>
