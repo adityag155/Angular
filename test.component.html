@@ -1,0 +1,28 @@
+<p>test works!</p>
+
+<!-- Interpolation -->
+<!-- Interpolation is used to carry value from .ts file to .html file -->
+Hello {{uname}}
+<br>
+
+<!-- Data Binding -->
+<!-- Data Binding is used to carry value from .ts file to .html file -->
+<input type="text" value="{{uname}}"><br>
+<input type="text" value="{{uname}}"disabled><br>
+
+<input type="text" value="{{uname}}"disabled="{{flag1}}"><br>
+<input type="text" value="{{uname}}"disabled="{{flag2}}"><br>
+
+<!-- Data Binding fails in case of boolean values -->
+
+<!-- Property Binding -->
+ <!-- Property Binding is used to carry value from .ts file to .html file -->
+<input type="text" [value]="uname"><br>
+<input type="text" [value]="uname" [disabled]="flag1"><br>
+<input type="text" [value]="uname" [disabled]="flag2"><br>
+
+<!-- Events -->
+<button (click)="myfun()">Click</button>
+<br>
+
+<input type="text" [(ngModel)]="uname">
