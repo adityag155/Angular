@@ -1,3 +1,5 @@
+//creating pojo folder under this creating this file
+
 export class Student{
 sno:number=0;
 sname:string='';
