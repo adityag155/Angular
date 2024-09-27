@@ -15,6 +15,7 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+------------------------------------------------------------------------------------------------------------------------------
 Code of pop up in HTML
 <!--- Modal starts here --><!--- ****************************************** -->
 
@@ -58,3 +59,33 @@ Code of pop up in HTML
 <!--- Modal ends here -->
 
   <button class="btn btn-outline-primary" (click)="openPopUp(studContent)">Add New Student</button>
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+//Code of pop up in .ts file
+
+Import following
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+Inject following through constructor:
+private modalService:NgbModal
+
+//Code for modal starts here
+// *************************
+openPopUp(content:any) {
+  this.modalService.open(content, { size: 'lg' });
+}
+
+private getDismissReason(reason: any): string {
+  if (reason === ModalDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on a backdrop';
+  } else {
+    return `with: ${reason}`;
+  }
+}
+
+// *************************
+//Code for modal ends here
+
