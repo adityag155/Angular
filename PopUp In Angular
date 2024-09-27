@@ -1,0 +1,60 @@
+//code for popup window in Angular:
+
+//Add following dependencies in package.json file
+"@ng-bootstrap/ng-bootstrap": "^14.x.x",
+    "bootstrap": "^5.2.0",
+
+//After adding this in package.json file, run npm install --force command on CLI.
+
+
+//Add following line in styles.css
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+//Add Follwing in app.module.ts
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+Code of pop up in HTML
+<!--- Modal starts here --><!--- ****************************************** -->
+
+<ng-template #studContent let-c="close" let-d="dismiss">
+    <div class="bg-info">
+        <div class="modal-header">
+          <h4 class="modal-title">Student Info</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+    </div>
+       
+    <div class="col-md-5">
+        <div class="form-group">
+            <label>Student No:</label>
+            <input type="text" class="form-control"   [(ngModel)]="obj.sno">
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="form-group">
+            <label>Student Name:</label>
+            <input type="text" class="form-control"  [(ngModel)]="obj.sname">
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="form-group">
+            <label>Student Age:</label>
+            <input type="text" class="form-control"  [(ngModel)]="obj.age">
+        </div>
+    </div>
+    
+    <div class="modal-footer" >
+                <button type="button" class="btn btn-success" (click)="c('Close click')">Save</button>
+    </div>
+    
+</ng-template>
+<!--- ****************************************** -->
+<!--- Modal ends here -->
+
+  <button class="btn btn-outline-primary" (click)="openPopUp(studContent)">Add New Student</button>
